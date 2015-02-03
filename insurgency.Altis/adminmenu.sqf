@@ -299,7 +299,7 @@ if(!isDedicated) then {
 					createDialog "RscDisplayControlSchemes";
 
 					_ctrl = (findDisplay 163) displayctrl 1000;
-					_ctrl ctrlSetText "Team-Atomic's Admin Menu";
+					_ctrl ctrlSetText "Admin Menu";
 					_ctrl ctrlSetFont "PuristaSemiBold";
 					_ctrl ctrlCommit 0;
 
