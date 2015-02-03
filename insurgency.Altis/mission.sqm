@@ -12024,9 +12024,9 @@ class Mission
 		{
 			position[]={25655.971,0.0025403816,15815.587};
 			name="ts";
-			text="Teamspeak - 5thme.dynts.com";
+			text="Teamspeak - 24.255.153.22";
 			type="mil_warning";
-			colorName="ColorGreen";
+			colorName="ColorRed";
 		};
 		class Item1142
 		{
