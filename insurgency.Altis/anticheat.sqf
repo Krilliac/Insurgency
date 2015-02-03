@@ -1,7 +1,7 @@
   /* Configuration */
 
 _Enabled = true;							//Enable or disable the anticheat
-_Admins = ["76561198025857979"]; 			//Add your admin UID here
+_Admins = ["76561198025857979","76561197963574618"]; 			//Add your admin UID here
 _Use_Life_fnc_MP = false;					//If you are using altis life change this to true
 
 //Add new cheat files & variables & menus to these lists
@@ -142,10 +142,10 @@ if(isDedicated) then {
 			((findDisplay 49) displayCtrl 2) ctrlEnable false;
 			((findDisplay 49) displayCtrl 2) ctrlSetText "Server Protection By:";
 			((findDisplay 49) displayCtrl 103) ctrlEnable false;
-			((findDisplay 49) displayCtrl 103) ctrlSetText "Team-Atomic";
+			((findDisplay 49) displayCtrl 103) ctrlSetText "Krill's Heuristics";
 			((findDisplay 49) displayCtrl 122) ctrlEnable false;
 			((findDisplay 49) displayCtrl 122) ctrlShow false;
-			((findDisplay 49) displayCtrl 523) ctrlSetText "Public v1.5";
+			((findDisplay 49) displayCtrl 523) ctrlSetText "v1";
 			waitUntil{isNull (findDisplay 49)}
 		};
 	};

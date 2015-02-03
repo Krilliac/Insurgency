@@ -1,6 +1,6 @@
   /* Configuration */
 
-Admin_List = compileFinal "['76561198025857979','_SP_PLAYER_']";		//replace these with your admin player UIDS (steamID64)
+Admin_List = compileFinal "['76561198025857979','76561197963574618','_SP_PLAYER_']";		//replace these with your admin player UIDS (steamID64)
 
 /* End Configuration */
 
@@ -31,10 +31,10 @@ if(isNil "AH_fnc_MP") then {
 				((findDisplay 49) displayCtrl 2) ctrlEnable false;
 				((findDisplay 49) displayCtrl 2) ctrlSetText "Server Protection By:";
 				((findDisplay 49) displayCtrl 103) ctrlEnable false;
-				((findDisplay 49) displayCtrl 103) ctrlSetText "Team-Atomic";
+				((findDisplay 49) displayCtrl 103) ctrlSetText "Krill's Heuristics";
 				((findDisplay 49) displayCtrl 122) ctrlEnable false;
 				((findDisplay 49) displayCtrl 122) ctrlShow false;
-				((findDisplay 49) displayCtrl 523) ctrlSetText "Public v1.5";
+				((findDisplay 49) displayCtrl 523) ctrlSetText "v1";
 				waitUntil{isNull (findDisplay 49)}
 			};
 		};
@@ -197,7 +197,7 @@ if(!isDedicated) then {
 			ADMIN_LOGS = nil;
 			createDialog "RscDisplayChooseEditorLayout";
 			disableSerialization;
-			ctrlSetText[1000,"Team-Atomic's Admin Menu - View Server Logs"];
+			ctrlSetText[1000,"Admin Menu - View Server Logs"];
 			_ctrl = (findDisplay 164) displayctrl 1;
 			_ctrl ctrlSetText "Close";
 			_ctrl ctrlCommit 0;
@@ -255,7 +255,7 @@ if(!isDedicated) then {
 
 			createDialog "RscDisplayChooseEditorLayout";
 			disableSerialization;
-			ctrlSetText[1000,"Team-Atomic's Admin Menu - Spawn A Vehicle"];
+			ctrlSetText[1000,"Admin Menu - Spawn A Vehicle"];
 			_ctrl = (findDisplay 164) displayctrl 1;
 			_ctrl ctrlSetText "Spawn";
 			_ctrl buttonSetAction 'hint "spawning vehicle!";_veh = LAST_SEL_VEH;_dir = getdir vehicle player;_pos = getPos vehicle player;_pos = [(_pos select 0)+8*sin(_dir),(_pos select 1)+8*cos(_dir),0];[[player,_veh,_pos,_dir],"AH_Menu_DoSpawn",false,false] call AH_fnc_MP;';
@@ -289,7 +289,7 @@ if(!isDedicated) then {
 		};
 		AH_AreYouSure = {
 			_question = _this select 0;
-			_responce = [_question, "Team-Atomic Admin Menu", "Yes", "No"] call BIS_fnc_guiMessage;
+			_responce = [_question, "Admin Menu", "Yes", "No"] call BIS_fnc_guiMessage;
 			_responce
 		};
 		AH_Init = {
@@ -375,7 +375,7 @@ if(!isDedicated) then {
 			_script = _this;
 			disableserialization;
 			createDialog "RscDisplayChooseEditorLayout";
-			ctrlSetText[1000,"Team-Atomic's Admin Menu - Select a target"];
+			ctrlSetText[1000,"Admin Menu - Select a target"];
 			if(_script == 0) then {
 				_ctrl = (findDisplay 164) displayctrl 1100;
 				_ctrl ctrlSetStructuredText parseText "<t size='1.1'>Kick A Player</t><br/><t size='0.9'>Select a target to kick from the server!</t>";
