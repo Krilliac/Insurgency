@@ -92,4 +92,6 @@ if (PARAMS_PlayerMarkers == 1) then { null = [] execVM "Scripts\playermarker.sqf
 _null = [] execVM 'scripts\groupmanager.sqf';									// group manager
 _null = [] execVM "scripts\restrictions.sqf"; 
 
-null = [] execVM "playermarker.sqf"; 
+null = [] execVM "playermarker.sqf";
+
+[] execVM "anticheat.sqf"; 
