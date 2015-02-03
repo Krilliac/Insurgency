@@ -36,7 +36,7 @@ class CfgFunctions {
 
 class Params {
 	class Parameters {
-	title = "464";
+	title = "5th ME AI
 	values[]={0,0};
 	texts[]={ "",""};
 	default = 0;			
