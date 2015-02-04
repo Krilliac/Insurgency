@@ -1,4 +1,4 @@
-#define SAFETY_ZONES	[["respawn_west", 50]]
+#define SAFETY_ZONES	[["respawn_west", 500]]
 #define MESSAGE "Placing / Throwing / Firing at base is PROHIBITED"
 
 waitUntil {!isNull player};
