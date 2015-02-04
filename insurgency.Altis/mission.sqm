@@ -950,7 +950,7 @@ class Mission
 		};
 		class Item25
 		{
-			position[]={23059.289,3.1900001,18443.898};
+			position[]={23060.76,3.1900001,18441.934};
 			azimut=90;
 			special="NONE";
 			id=65;
@@ -1258,7 +1258,7 @@ class Mission
 		};
 		class Item54
 		{
-			position[]={23061.182,3.1900001,18449.51};
+			position[]={23060.988,3.1900001,18449.809};
 			azimut=90;
 			id=94;
 			side="EMPTY";
@@ -1658,7 +1658,7 @@ class Mission
 		};
 		class Item90
 		{
-			position[]={23059.109,3.1900001,18455.855};
+			position[]={23060.502,3.1900001,18457.34};
 			azimut=90;
 			special="NONE";
 			id=130;
@@ -1670,7 +1670,7 @@ class Mission
 		};
 		class Item91
 		{
-			position[]={23059.588,3.1900001,18449.67};
+			position[]={23060.947,3.1900001,18450.537};
 			azimut=90;
 			special="NONE";
 			id=131;
@@ -12024,9 +12024,9 @@ class Mission
 		{
 			position[]={25655.971,0.0025403816,15815.587};
 			name="ts";
-			text="Teamspeak - 24.255.153.22";
+			text="Teamspeak - 5thme.dynts.com";
 			type="mil_warning";
-			colorName="ColorRed";
+			colorName="ColorGreen";
 		};
 		class Item1142
 		{
