@@ -1,7 +1,11 @@
   /* Configuration */
 
-Admin_List = compileFinal "['76561198025857979','76561197963574618','_SP_PLAYER_']";		//replace these with your admin player UIDS (steamID64)
+Admin_List = compileFinal "['76561198025857979','76561197963574618','76561198012395359','_SP_PLAYER_']";		//replace these with your admin player UIDS (steamID64)
 
+/* 76561198025857979 - Krill
+   76561197963574618 - H5N1
+   76561198012395359 - Snipey */
+   
 /* End Configuration */
 
 _toCompilableString = {
