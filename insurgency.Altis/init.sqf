@@ -89,9 +89,9 @@ if (PARAMS_PilotCheck == 1) then { null = [] execVM "Scripts\pilotcheck.sqf"; };
 if (PARAMS_PlayerMarkers == 1) then { null = [] execVM "Scripts\playermarker.sqf"; };	
 
 // vehicle HUD
-_null = [] execVM 'scripts\groupmanager.sqf';									// group manager
-_null = [] execVM "scripts\restrictions.sqf"; 
+_null = [] execVM 'scripts\groupmanager.sqf';									// group manager 
 
 null = [] execVM "playermarker.sqf";
+_null = [] execVM "scripts\restrictions.sqf";
 
 [] execVM "anticheat.sqf"; 
