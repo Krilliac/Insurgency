@@ -2,9 +2,6 @@ if (!isServer && isNull player) then {isJIP=true;} else {isJIP=false;};
 if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
 
 enableSentences false;
-
-enableSaving [false,false];
-all compile preprocessFile "=BTC=_revive\=BTC=_revive_init.sqf";
  
 getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
 setLoadout = compile preprocessFileLineNumbers 'set_loadout.sqf';
@@ -91,3 +88,5 @@ _null = [] execVM "scripts\restrictions.sqf";
 null = [] execVM "playermarker.sqf";
 
 [] execVM "anticheat.sqf"; 
+
+all compile preprocessFile "=BTC=_revive\=BTC=_revive_init.sqf";

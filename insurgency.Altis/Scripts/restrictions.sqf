@@ -29,7 +29,7 @@ _sniperSpecialised = ["srifle_GM6_F","srifle_GM6_LRPS_F","srifle_GM6_SOS_F","sri
 _opticsAllowed = [""];
 _specialisedOptics = ["optic_Nightstalker","optic_tws","optic_tws_mg"];
 //===== BACKPACKS
-_backpackRestricted = ["O_Mortar_01_support_F","I_Mortar_01_support_F","O_Mortar_01_weapon_F","I_Mortar_01_weapon_F","O_UAV_01_backpack_F","I_UAV_01_backpack_F","O_HMG_01_support_F","I_HMG_01_support_F","O_HMG_01_support_high_F","I_HMG_01_support_high_F","O_HMG_01_weapon_F","I_HMG_01_weapon_F","O_HMG_01_A_weapon_F","I_HMG_01_A_weapon_F","O_GMG_01_weapon_F","I_GMG_01_weapon_F","O_GMG_01_A_weapon_F","I_GMG_01_A_weapon_F","O_HMG_01_high_weapon_F","I_HMG_01_high_weapon_F","O_HMG_01_A_high_weapon_F","I_HMG_01_A_high_weapon_F","O_GMG_01_high_weapon_F","I_GMG_01_high_weapon_F","O_GMG_01_A_high_weapon_F","I_GMG_01_A_high_weapon_F","I_AT_01_weapon_F","O_AT_01_weapon_F","I_AA_01_weapon_F","O_AA_01_weapon_F"];
+_backpackRestricted = [];
 //===== LMG
 _autoRiflemen = ["B_soldier_AR_F","B_officer_F"];
 _autoSpecialised = ["LMG_Mk200_F","LMG_Mk200_MRCO_F","LMG_Mk200_pointer_F","LMG_Zafir_F","LMG_Zafir_pointer_F"];
@@ -75,83 +75,7 @@ if (PARAMS_rSOptics != 0) then {restrict_sOptics = true;};
 
 while {true} do {
 
-	//------------------------------------- Launchers
 
-	if (({player hasWeapon _x} count _missileSpecialised) > 0) then {
-		if (({player isKindOf _x} count _missileSoldiers) < 1) then {
-			player removeWeapon (secondaryWeapon player);
-			titleText [AT_MSG,"PLAIN",3];
-		};
-	};
-	
-	sleep 1;
-	//------------------------------------- Sniper Rifles
-
-	if (({player hasWeapon _x} count _sniperSpecialised) > 0) then {
-		if (({player isKindOf _x} count _snipers) < 1) then {
-			player removeWeapon (primaryWeapon player);
-			titleText [SNIPER_MSG,"PLAIN",3];
-		};
-	};
-
-	sleep 1;
-	//------------------------------------- UAV
-
-    _assignedItems = assignedItems player;
-
-	if (({"B_UavTerminal" == _x} count _assignedItems) > 0) then {
-		if (({player isKindOf _x} count _uavOperator) < 1) then {
-			player unassignItem "B_UavTerminal";
-			player removeItem "B_UavTerminal";
-			titleText [UAV_MSG,"PLAIN",3];
-		};
-	};
-	
-	sleep 1;
-	//------------------------------------- Thermal optics
-
-	if (restrict_Thermal) then {
-		_optics = primaryWeaponItems player;	
-		if (({_x in _optics} count _specialisedOptics) > 0) then {
-			if (({player isKindOf _x} count _opticsAllowed) < 1) then {
-				{player removePrimaryWeaponItem  _x;} count _specialisedOptics;
-				titleText [OPTICS_MSG,"PLAIN",3];
-			};
-		};
-		sleep 1;
-	};
-	
-	//------------------------------------- sniper optics
-
-	if (restrict_sOptics) then {
-		_optics = primaryWeaponItems player;	
-		if (({_x in _optics} count _sniperOpt) > 0) then {
-			if (({player isKindOf _x} count _sniperTeam) < 1) then {
-				{player removePrimaryWeaponItem  _x;} count _sniperOpt;
-				titleText [SOPT_MSG,"PLAIN",3];
-			};
-		};
-		sleep 1;
-	};
-
-	//------------------------------------- LMG
-		
-	if (restrict_LMG) then {
-		if (({player hasWeapon _x} count _autoSpecialised) > 0) then {
-			if (({player isKindOf _x} count _autoRiflemen) < 1) then {
-				player removeWeapon (primaryWeapon player);
-				titleText [MG_MSG,"PLAIN",3];
-			};
-		};
-		sleep 1;
-	};
-	
-	//------------------------------------- Opfor turret backpacks
-
-	if ((backpack player) in _backpackRestricted) then {
-		removeBackpack player;
-		titleText [AUTOTUR_MSG, "PLAIN", 3];
-	};
 	
 	//===================================== SAFE ZONE MANAGER
 	
