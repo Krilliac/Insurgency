@@ -25,12 +25,13 @@ minPlayers = 1;
 maxPlayers = 40;
 };
 
+#include "=BTC=_revive\=BTC=_respawn.h"
+
 class RscTitles {
-#include "ais_injury\dialogs\rscTitlesAIS.hpp"
+
 };
 
 class CfgFunctions {
-#include "ais_injury\cfgFunctionsAIS.hpp"
 #include "Scripts\taw_vd\CfgFunctions.hpp"
 };
 

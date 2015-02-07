@@ -3,13 +3,9 @@ if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
 
 enableSentences false;
 
-["%1 --- Executing TcB AIS init.sqf",diag_ticktime] call BIS_fnc_logFormat;
-
-if (!isDedicated) then {
-	TCB_AIS_PATH = "ais_injury\";
-	{[_x] call compile preprocessFile (TCB_AIS_PATH+"init_ais.sqf")} forEach (if (isMultiplayer) then {playableUnits} else {switchableUnits});
-};
-
+enableSaving [false,false];
+all compile preprocessFile "=BTC=_revive\=BTC=_revive_init.sqf";
+ 
 getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
 setLoadout = compile preprocessFileLineNumbers 'set_loadout.sqf';
                                              
@@ -90,7 +86,7 @@ if (PARAMS_PlayerMarkers == 1) then { null = [] execVM "Scripts\playermarker.sqf
 
 // vehicle HUD
 _null = [] execVM 'scripts\groupmanager.sqf';									// group manager
-
+_null = [] execVM "scripts\restrictions.sqf"; 
 
 null = [] execVM "playermarker.sqf";
 
