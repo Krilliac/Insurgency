@@ -5,7 +5,7 @@ _Admins = ["76561198025857979","76561197963574618","76561198012395359"]; 			//Ad
 _Use_Life_fnc_MP = false;					//If you are using altis life change this to true
 
 //Add new cheat files & variables & menus to these lists
-_DetectedFiles = ["JM3.sqf","JM3.png","wookie.sqf","wookie_wuat\start.sqf","lystoarma3\start.sqf","help.sqf","hack.sqf","cheat.sqf","JxMxE.sqf","JME.sqf","wookiev5.sqf","menu.sqf"];			
+_DetectedFiles = ["JM3.sqf","JM3.png","wookie.sqf","wookie_wuat\start.sqf","lystoarma3\start.sqf","help.sqf","hack.sqf","cheat.sqf","JxMxE.sqf","JME.sqf","wookiev5.sqf","menu.sqf","fnc_ammo.sqf","fnc_autoheal.sqf","fnc_booster","fnc_bulletcam","fnc_bullettrack","fnc_create_vehicle","fnc_create_weapon","fnc_environment","fnc_exec_console.sqf","fnc_global.sqf","fnc_satcam_keyhandler.sqf","fnc_satcam_keyhandler_OA.sqf","fnc_sattelite.sqf","fnc_show_dialog.sqf","fnc_sound.sqf","fnc_statistics","fnc_status","fnc_target"];			
 _DetectedVariables = ["ESP","Wookie","Extasy","GOD","GodMode","JxMxE_Exec","Lystic","Hack","Script","Wookie_Exec","Bypass"];
 _DetectedMenus = [3030];
 /* End Configuration */
