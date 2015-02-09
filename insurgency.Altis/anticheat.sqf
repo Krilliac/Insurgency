@@ -6,8 +6,14 @@ _Use_Life_fnc_MP = false;					//If you are using altis life change this to true
 
 //Add new cheat files & variables & menus to these lists
 _DetectedFiles = ["JM3.sqf","JM3.png","wookie.sqf","wookie_wuat\start.sqf","lystoarma3\start.sqf","help.sqf","hack.sqf","cheat.sqf","JxMxE.sqf","JME.sqf","wookiev5.sqf","menu.sqf","proving_ground\fnc_ammo.sqf","proving_ground\fnc_autoheal.sqf","proving_ground\fnc_booster","proving_ground\fnc_bulletcam","proving_ground\fnc_bullettrack","proving_ground\fnc_create_vehicle","proving_ground\fnc_create_weapon","proving_ground\fnc_environment","proving_ground\fnc_exec_console.sqf","proving_ground\fnc_global.sqf","proving_ground\fnc_satcam_keyhandler.sqf","proving_ground\fnc_satcam_keyhandler_OA.sqf","proving_ground\fnc_sattelite.sqf","proving_ground\fnc_show_dialog.sqf","proving_ground\fnc_sound.sqf","proving_ground\fnc_statistics","proving_ground\fnc_status","proving_ground\fnc_target"];			
-_DetectedVariables = ["ESP","Wookie","Extasy","GOD","GodMode","JxMxE_Exec","Lystic","Hack","Script","Wookie_Exec","Bypass","createVehicle"];
-_DetectedMenus = [3030];
+_DetectedVariables = ["ESP","Wookie","Extasy","GOD","GodMode","JxMxE_Exec","Lystic","Hack","Script","Wookie_Exec","Bypass","createVehicle","W_O_O_K_I_E_FUD_Pro_RE","W_O_O_K_I_E_FUD_Car_RE","W_O_O_K_I_E_FUD_Car_RE","W_O_O_K_I_E_FUD_FuckUp_GunStore","W_O_O_K_I_E_FUD_M_E_N_U_initMenu","W_O_O_K_I_E_FuckUp_GunStore_a",
+"W_O_O_K_I_E_M_E_N_U_funcs_inited","Menu_Init_Lol","E_X_T_A_S_Y_Atm","W_O_O_K_I_E_Pro_RE","W_O_O_K_I_E_Debug_Mon","W_O_O_K_I_E_Debug_1337","Veh_S_P_A_W_N_Shitt","sfsefse","tw4etinitMenu","tw4etgetControl",
+"efr4243234","sdfwesrfwesf233","sdgff4535hfgvcxghn","adadawer24_1337","lkjhgfuyhgfd","E_X_T_A_S_Y_M_E_N_U_funcs_inited","dayz_serverObjectMonitor","fsfgdggdzgfd","fsdddInfectLOL","Wookie_List",
+"Wookie_Pro_RE","Wookie_Car_RE","Wookie_Debug_Mon","faze_funcs_inited","advertising_banner_infiSTAR","atext_star_xa","Monky_hax_dbclick","qopfkqpofqk","debug_star_colorful","AntiAntiAntiAntiHax","antiantiantiantih4x",
+"hub","scrollinit","gfYJV","Lystic_LMAOOOOOOOOOOOOOOOOOOO","Lystic_Re","Lysto_Lyst","E_X_T_A_S_Y_Keybinds","Menulocations","Lystic_Init","scroll_m_init_star","exstr1","pathtoscrdir3","Monky_funcs_inited",
+"Monky_initMenu","player_zombieCheck","E_X_T_A_S_Y_Recoil","godlol","playericons","abcdefGEH","wierdo","go_invisible_infiSTAR","serverObjectMonitor","enamearr","initarr3","locdb","sCode","infAmmoIndex",
+"nukeDONEstar","Wookie_List","Wookie_Pro_RE","FUCKTONIC","E_X_T_A_S_Y_FuckUp_GunStore_a","E_X_T_A_S_Y_Cash_1k_t","E_X_T_A_S_Y_Cash_a","E_X_T_A_S_Y_LicenseDrive","E_X_T_A_S_Y_Menu_LOOOOOOOOOL"];
+_DetectedMenus = [3030],[64],[101],[162],[129];
 /* End Configuration */
 
 if(!_Enabled) exitWith {};
@@ -117,8 +123,8 @@ if(isDedicated) then {
 		_uid = getplayeruid player;
 		while{true} do {
 			if(unitRecoilCoefficient player < 1) exitWith {
-				[[_name,_uid,"Recoil Hack"],"Notify_Kick",false,false] call AH_fnc_MP;
-				call Kick;
+				[[_name,_uid,"Recoil Hack"],"Notify",false,false] call AH_fnc_MP;
+				//call Kick;
 			};
 			_time = time + 5;
 			setTerrainGrid 25;
