@@ -15,6 +15,7 @@ private ["_opticsAllowed","_specialisedOptics","_optics","_basePos","_firstRun",
 #define OPTICS_MSG "Thermal optics such as TWS and Nightstalker are currently restricted."
 #define MG_MSG "Only Autoriflemen may use this weapon system. LMG removed."
 #define SOPT_MSG "SOS and LRPS are designated for Snipers and Spotters only. Optic removed."
+#define BAG_MSG "Mortars, UAVs and Sleeping Bags are disabled. Bag removed."
 
 //===== UAV TERMINAL
 _uavOperator = ["B_soldier_UAV_F","B_officer_F"];
