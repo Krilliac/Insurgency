@@ -1,4 +1,4 @@
-class RscDeadQuote {
+﻿class RscDeadQuote {
 	onload = "uinamespace setvariable ['tcb_ais_title',_this select 0];";
 	idd = 1792;
 	movingEnable = false;
@@ -119,6 +119,7 @@ class ais_ProgressBar {
 				valign = "middle";
 				shadow = 1;
 				shadowColor = "#000000";
+				//size = "2.25";
 			};
 		};
 	};

@@ -1,3 +1,5 @@
+// by BonInf*
+// changed by psycho
 private ["_injuredperson","_healer","_behaviour","_timenow","_relpos","_dir","_offset","_time","_damage","_isMedic","_healed","_animChangeEVH","_skill_factor"];
 _injuredperson = _this select 0;
 _healer = _this select 1;
@@ -117,6 +119,7 @@ if (!isPlayer _healer) then {
 	_healer enableAI "TARGET";
 	_healer enableAI "AUTOTARGET";
 	_healer enableAI "ANIM";
+	//_healer doMove (position (leader group _healer));
 };
 
 if (alive _healer && {!(_healer getVariable "tcb_ais_agony")}) then {
@@ -141,6 +144,7 @@ if (!tcb_healerStopped) then {
 	};
 
 	if (time - _time > _damage) then {
+		//_old_damage = _injuredperson getVariable "tcb_ais_damageStore";
 		if (_healed > _old_damage) then {
 			_injuredperson setDamage _old_damage;
 		} else {

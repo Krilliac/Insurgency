@@ -1,3 +1,4 @@
+// by psycho
 private["_injured","_return"];
 _injured = _this select 0;
 _return = if (alive _injured && {isNull(_injured getVariable ["dragger",objNull])} && {isNull(_injured getVariable ["healer", objNull])}) then {true} else {false};

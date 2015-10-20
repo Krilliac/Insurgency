@@ -1,3 +1,4 @@
+// by psycho
 private ["_victim","_killer","_pos","_deadcam"];
 if (!isDedicated && {!hasInterface}) exitWith {};
 
@@ -14,6 +15,7 @@ _deadcam camPrepareTarget _victim;
 _deadcam camPreparePos _pos;
 _deadcam camPrepareFOV 0.7;
 _deadcam camCommitPrepared 0;
+
 
 _quote = tcb_ais_killcam_quotes select (floor (random (count tcb_ais_killcam_quotes)));
 _handle = [_quote select 0, _quote select 1, ((missionNameSpace getVariable "tcb_ais_respawndelay") - 1)] spawn tcb_fnc_quote;

@@ -1,3 +1,4 @@
+// by psycho
 private["_unit", "_strength", "_power", "_color"];
 _unit = _this select 0;
 _strength = _this select 1;
@@ -15,6 +16,7 @@ if (vehicle _unit == _unit && {cameraView in ["INTERNAL","GUNNER"]}) then {
 	_color = 1 - _strength;
 	if (_color < 0.15) then {_color = 0.15};
 
+	// set color corrections
 	"colorCorrections" ppEffectEnable true;
 	"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, _color],  [1, 1, 1, 0.0]];
 	"colorCorrections" ppEffectCommit 0;
@@ -23,6 +25,8 @@ if (vehicle _unit == _unit && {cameraView in ["INTERNAL","GUNNER"]}) then {
 	"dynamicBlur" ppEffectAdjust [1.8];
 	"dynamicBlur" ppEffectCommit 0;
 
+
+	// set effect duration, depending on hit strength
 	"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 1],  [1, 1, 1, 0.0]];
 	"colorCorrections" ppEffectCommit _strength;
 

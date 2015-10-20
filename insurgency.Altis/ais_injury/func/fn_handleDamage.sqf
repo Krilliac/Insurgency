@@ -1,10 +1,12 @@
+// by BonInf*
+// changed by psycho
 private ['_agony','_unit','_bodypart','_damage','_return','_revive_factor','_source'];
 _unit 		= _this select 0;
 _bodypart	= _this select 1;
 _damage		= _this select 2;
 _source 	= _this select 3;
 
-if (isNull _source && {_unit getVariable "tcb_ais_agony"}) exitWith {_unit getVariable "tcb_ais_damageStore"};
+if (isNull _source && {_unit getVariable "tcb_ais_agony"}) exitWith {_unit getVariable "tcb_ais_damageStore"};	//<-- exclude NullSource break down some other game features!!!
 
 if (tcb_ais_impactEffects) then {
 	[_unit,_damage] call tcb_fnc_impactEffect;
@@ -12,19 +14,20 @@ if (tcb_ais_impactEffects) then {
 
 if (!(_unit getVariable "tcb_ais_agony") && {alive _unit}) then {
 	_return = _damage / (tcb_ais_rambofactor max 1);
+	//diag_log format [".............................................part: %1 --- damage: %2 --- return: %3",_bodypart,_damage,_return];
 	_revive_factor = (tcb_ais_rambofactor max 1) * 1.5;
 	_agony = false;
 
 	switch _bodypart do {
 		case "body" : {
-			_damage = (_unit getVariable "tcb_ais_bodyhit") + (_return * 0.5);
+			_damage = (_unit getVariable "tcb_ais_bodyhit") + (_return * 0.5);	// scale down for 1.14
 			_unit setVariable ["tcb_ais_bodyhit", _damage];
 			if (_damage >= 0.9) then {
 				_agony = true;
 				if (!tcb_ais_revive_guaranty && {!tcb_ais_realistic_mode}) then {
 					if (_damage > _revive_factor) then {_unit setVariable ["tcb_ais_unit_died", true]};
 				};
-				if (!(_unit getVariable "tcb_ais_unit_died") && {!tcb_ais_revive_guaranty}) then {	
+				if (!(_unit getVariable "tcb_ais_unit_died") && {!tcb_ais_revive_guaranty}) then {	// determine 0-damage in agony
 					_unit setDamage _return;
 					_unit setVariable ["tcb_ais_damageStore", _return];
 				} else {
@@ -40,9 +43,9 @@ if (!(_unit getVariable "tcb_ais_agony") && {alive _unit}) then {
 		};
 		
 		case "head" : {
-			if (_damage > 20) exitWith {};	
+			if (_damage > 20) exitWith {};	// ghost-dead-bug
 			if (tcb_ais_realistic_mode) then {
-				_damage = (_unit getVariable "tcb_ais_headhit") + (_return * 2.5);	
+				_damage = (_unit getVariable "tcb_ais_headhit") + (_return * 2.5);	// scale up for 1.14
 			} else {
 				_damage = (_unit getVariable "tcb_ais_headhit") + (_return * 1.0);
 			};
@@ -52,7 +55,7 @@ if (!(_unit getVariable "tcb_ais_agony") && {alive _unit}) then {
 				if (!tcb_ais_revive_guaranty && {!tcb_ais_realistic_mode}) then {
 					if (_damage > _revive_factor) then {_unit setVariable ["tcb_ais_unit_died", true]};
 				};
-				if (!(_unit getVariable "tcb_ais_unit_died") && {!tcb_ais_revive_guaranty}) then {	
+				if (!(_unit getVariable "tcb_ais_unit_died") && {!tcb_ais_revive_guaranty}) then {	// determine 0-damage in agony
 					_unit setDamage _return;
 					_unit setVariable ["tcb_ais_damageStore", _return];
 				} else {
@@ -62,6 +65,7 @@ if (!(_unit getVariable "tcb_ais_agony") && {alive _unit}) then {
 						_unit setVariable ["tcb_ais_damageStore", 0.89];
 					};
 				};
+				//diag_log format ["head damage: %1", _damage];
 			} else {
 				_unit setHit ["head", _damage];
 			};
@@ -123,14 +127,14 @@ if (!(_unit getVariable "tcb_ais_agony") && {alive _unit}) then {
 		};
 		
 		case "" : {
-			_damage = damage vehicle _unit + _return;
+			_damage = damage vehicle _unit + _return; //(_unit getVariable "tcb_ais_overall") + _return;
 			_unit setVariable ["tcb_ais_overall", _damage];
 			if (_damage >= 0.9) then {
 				_agony = true;
 				if (!tcb_ais_revive_guaranty || {tcb_ais_realistic_mode}) then {
 					if (_damage > _revive_factor) then {_unit setVariable ["tcb_ais_unit_died", true]};
 				};
-				if (!(_unit getVariable "tcb_ais_unit_died") && {!tcb_ais_revive_guaranty}) then {	
+				if (!(_unit getVariable "tcb_ais_unit_died") && {!tcb_ais_revive_guaranty}) then {	// determine 0-damage in agony
 					_unit setDamage _return;
 					_unit setVariable ["tcb_ais_damageStore", _return];
 				} else {
@@ -164,5 +168,5 @@ if (!(_unit getVariable "tcb_ais_agony") && {alive _unit}) then {
 	_return = _unit getVariable "tcb_ais_damageStore";
 };
 
-BIS_hitArray = _this; BIS_wasHit = true; 
+BIS_hitArray = _this; BIS_wasHit = true; // For BIS stuff to work
 _return

@@ -1,3 +1,4 @@
+// by psycho
 if (!local player) exitWith {};
 
 if (count tcb_ais_medequip_array > 0) then {

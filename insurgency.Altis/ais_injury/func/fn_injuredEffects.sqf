@@ -1,3 +1,5 @@
+// by EightSix
+// or maybee BI...
 private ["_unit","_display", "_texLower", "_texMiddle", "_texUpper", "_x", "_y", "_w", "_h"];
 _unit = _this select 0;
 if (_unit != player) exitWith {};
@@ -7,7 +9,7 @@ if (isnil {uinamespace getvariable "RscHealthTextures"}) then {uinamespace setva
 if (isnull (uinamespace getvariable "RscHealthTextures")) then {(["HealthPP_blood"] call bis_fnc_rscLayer) cutrsc ["RscHealthTextures","plain"]};
 _display = uinamespace getvariable "RscHealthTextures";
 
-_texLower = _display displayctrl 1211;
+_texLower = _display displayctrl 1211;//1013; //1001
 _texLower ctrlsetfade 1;
 _texLower ctrlcommit 0;
 
@@ -19,9 +21,9 @@ _texUpper = _display displayctrl 1213;
 _texUpper ctrlsetfade 1;	
 _texUpper ctrlcommit 0;
 
-_x = ((0 * safezoneW) + safezoneX) + ((safezoneW - (2.125 * safezoneW * 3/4)) / 2); 
-_y = (-0.0625 * safezoneH) + safezoneY; 
-_w = 2.125 * safezoneW * 3/4;
+_x = ((0 * safezoneW) + safezoneX) + ((safezoneW - (2.125 * safezoneW * 3/4)) / 2); //textura vycentrovana na støed (pøièítá se polovina místa které zbývá od konce textury k pravému okraji obrazovky)
+_y = (-0.0625 * safezoneH) + safezoneY; //levy horni roh o 10% nad obrazovkou
+_w = 2.125 * safezoneW * 3/4;//safezoneW * 3/4;  //sirka o 20% vetsi nez sirka obrazovky (10% presah vlevo, 10% presah vpravo)
 _h = 1.125 * safezoneH;
 
 _texLower ctrlsetposition [_x, _y, _w, _h];

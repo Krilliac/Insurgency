@@ -1,4 +1,4 @@
-DEBUG = false;
+DEBUG = true;
 
 if !isserver exitwith {};
 

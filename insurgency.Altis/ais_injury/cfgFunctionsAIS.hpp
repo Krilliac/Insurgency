@@ -33,5 +33,6 @@ class tcb_ais {
 		addf(help);
 		addf(impactEffect);
 		addf(callHelp);
+		addf(diary);
 	};
 };

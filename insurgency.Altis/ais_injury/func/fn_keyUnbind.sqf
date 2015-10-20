@@ -1,9 +1,11 @@
+// by psycho
+// unbind some key functions while the player is unconcious (caused by stupid 3.0)
 private ["_key","_return"];
 _key = _this select 1;
 _return = false;
 
-if ((player getVariable 'unit_is_unconscious') && {_key in [35]}) then {[player] call tcb_fnc_callHelp};	
-_return = if ((player getVariable 'unit_is_unconscious') && {_key in [34]}) then {true} else {false};		
+if ((player getVariable 'unit_is_unconscious') && {_key in [35]}) then {[player] call tcb_fnc_callHelp};	// key "H" --> call for Help
+_return = if ((player getVariable 'unit_is_unconscious') && {_key in [34]}) then {true} else {false};		// throw grenade
 
 {
 	if ((player getVariable 'unit_is_unconscious') && {_key in (actionkeys _x)}) then {

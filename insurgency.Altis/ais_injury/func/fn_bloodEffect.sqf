@@ -27,15 +27,15 @@ private ["_unit","_int","_nextTime", "_source", "_mylogic", "_blood", "_bodyPos"
 						"",
 						"Billboard",
 						0.5,
-						0.1,															
+						0.1,																// lifetime
 						[0,0,0],
-						[(0.3 - (random 0.6)),(0.3 - (random 0.6)),(0.2 + (random 0.3))],	
-						1,0.32,0.2,0.05,													
+						[(0.3 - (random 0.6)),(0.3 - (random 0.6)),(0.2 + (random 0.3))],	// velocity
+						1,0.32,0.2,0.05,													//rotationVel,weight,volume,rubbing
 						[0.05,0.25],
-						[[0.2,0.01,0.01,1],[0.2,0.01,0.01,0]],							
+						[[0.2,0.01,0.01,1],[0.2,0.01,0.01,0]],								// color
 						[0.1],
-						1,																
-						0.04,																
+						1,																	// ran dir
+						0.04,																//ran intesnity
 						"",
 						"",
 						_mylogic
@@ -62,3 +62,5 @@ private ["_unit","_int","_nextTime", "_source", "_mylogic", "_blood", "_bodyPos"
 		tcb_ais_areBleeding set [_forEachIndex, -1];
 	};
 } forEach tcb_ais_areBleeding;
+
+//["breath", {call my_breath_func}, 0.1] call tcb_fnc_addPerFrame;

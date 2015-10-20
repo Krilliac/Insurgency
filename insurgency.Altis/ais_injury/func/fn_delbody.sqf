@@ -1,3 +1,4 @@
+// by psycho
 _body = _this select 0;
 _delay = _this select 1;
 

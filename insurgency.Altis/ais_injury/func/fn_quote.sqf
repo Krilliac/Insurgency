@@ -1,6 +1,13 @@
+/*
+ * Show a quote on screen, with the Quote in the center and author in the middle
+ * 
+ * _this select 0: Quote
+ * _this select 1: Author of quote
+ * _this select 2: (optional) time to display (default 10)
+ */
 disableSerialization;
 if (!isDedicated && {!hasInterface}) exitWith {};
-if (!isNil {uinamespace getvariable "tcb_title"}) exitWith {};		
+if (!isNil {uinamespace getvariable "tcb_title"}) exitWith {};		// compatibility with original quote
 
 _quote = _this select 0;
 _author = _this select 1;

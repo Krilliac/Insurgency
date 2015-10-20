@@ -1,6 +1,8 @@
+// by psycho
 private ["_healer","_bool"];
 _healer = _this select 0;
 
+//if (!isPlayer _healer) exitWith {true};	rule for AI and players
 _bool = false;
 
 _bool = switch (tcb_ais_medical_education) do {

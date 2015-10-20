@@ -1,3 +1,4 @@
+// by psycho
 private ["_healer","_injured"];
 _healer = _this select 0;
 _injured = _this select 1;

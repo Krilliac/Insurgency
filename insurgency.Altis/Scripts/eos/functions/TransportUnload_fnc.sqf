@@ -3,7 +3,7 @@ _mkr=(_this select 0);
 _veh=(_this select 1);
 _counter=(_this select 2);
 
-_debug=false;
+_debug=true;
 					_vehicle = _veh select 0;
 					_grp = _veh select 2;					
 					_cargoGrp= _veh select 3;

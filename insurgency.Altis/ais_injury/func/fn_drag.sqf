@@ -1,3 +1,4 @@
+// by Bon_Inf*
 private["_injuredperson","_dragger"];
 _injuredperson = _this select 0;
 _dragger = _this select 1;
@@ -14,7 +15,7 @@ _injuredperson switchMove "AinjPpneMrunSnonWnonDb";
 _dragger playAction "grabDrag";
 sleep 1;
 
-dropaction = _dragger addAction [format["<t color='#ffffff'>Drop %1</t>",name _injuredperson], {_this spawn tcb_fnc_drop},_injuredperson, 0, false, true];
-carryaction = _dragger addAction [format["<t color='#ffffff'>Carry %1</t>",name _injuredperson], {_this spawn tcb_fnc_carry},_injuredperson, 0, false, true];
+dropaction = _dragger addAction [format["<t color='#FC9512'>Drop %1</t>",name _injuredperson], {_this spawn tcb_fnc_drop},_injuredperson, 0, false, true];
+carryaction = _dragger addAction [format["<t color='#FC9512'>Carry %1</t>",name _injuredperson], {_this spawn tcb_fnc_carry},_injuredperson, 0, false, true];
 _dragger setVariable ["drop_action", dropaction];
 _dragger setVariable ["carry_action", carryaction];

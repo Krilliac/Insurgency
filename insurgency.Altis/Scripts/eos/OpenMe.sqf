@@ -16,7 +16,7 @@ VictoryColor="colorGreen";
 hostileColor="colorRed";	
 bastionColor="colorRed";	
 EOS_DAMAGE_MULTIPLIER=2;	
-EOS_KILLCOUNTER=false;		
+EOS_KILLCOUNTER=true;		
 
 null = [["5_EOS","5_EOS_1","5_EOS_2","5_EOS_3","5_EOS_4","5_EOS_5","5_EOS_6","5_EOS_7","5_EOS_8","5_EOS_9","5_EOS_10","5_EOS_11","5_EOS_105",
 "5_EOS_13","5_EOS_14","5_EOS_15","5_EOS_17","5_EOS_18","5_EOS_19","5_EOS_21","5_EOS_23","5_EOS_24","5_EOS_25","5_EOS_26","5_EOS_27",
@@ -209,7 +209,7 @@ null = [["5_EOS","5_EOS_1","5_EOS_2","5_EOS_3","5_EOS_4","5_EOS_5","5_EOS_6","5_
 "4_EOS_325","4_EOS_326","4_EOS_327","4_EOS_328","4_EOS_329","4_EOS_330","4_EOS_331","4_EOS_332","4_EOS_333","4_EOS_334","4_EOS_335",
 "4_EOS_336","4_EOS_337","4_EOS_338","4_EOS_339","4_EOS_340","4_EOS_341","4_EOS_342","4_EOS_343","4_EOS_344","4_EOS_345","4_EOS_346",
 "4_EOS_347","4_EOS_348","4_EOS_349","4_EOS_350","4_EOS_351","4_EOS_352","4_EOS_353","4_EOS_354","4_EOS_355","4_EOS_356","5_EOS_95",
-"5_EOS_84_2","5_EOS_84_3","5_EOS_84_6","5_EOS_84_8","5_EOS_84_10","5_EOS_84_9","5_EOS_84_11","5_EOS_84_4"],[1,1,100],[1,1,100],[1,2,20],[1,7], [0,0],[1,3,10],[2,0,175,OPFOR,TRUE,FALSE]] call EOS_Spawn;
+"5_EOS_84_2","5_EOS_84_3","5_EOS_84_6","5_EOS_84_8","5_EOS_84_10","5_EOS_84_9","5_EOS_84_11","5_EOS_84_4"],[1,1,100],[1,1,100],[1,2,20],[1,7], [0,0],[1,3,10],[2,0,175,opfor,TRUE,FALSE]] call EOS_Spawn;
 
 null = [["5_EOS_12","5_EOS_22","5_EOS_32","5_EOS_42","5_EOS_66","5_EOS_72","5_EOS_82","5_EOS_92","5_EOS_112","5_EOS_122","5_EOS_132","5_EOS_162",
 "5_EOS_172","5_EOS_182","4_EOS_12","4_EOS_22","4_EOS_32","4_EOS_42","4_EOS_66","4_EOS_72","4_EOS_82","4_EOS_92","4_EOS_112","4_EOS_122",
@@ -222,5 +222,5 @@ null = [["5_EOS_12","5_EOS_22","5_EOS_32","5_EOS_42","5_EOS_66","5_EOS_72","5_EO
 "5_EOS_20","5_EOS_62","5_EOS_142","5_EOS_152","4_EOS_20","4_EOS_62","4_EOS_142","4_EOS_152","3_EOS_20","3_EOS_62","3_EOS_142","3_EOS_152",
 "2_EOS_20","2_EOS_62","2_EOS_142","2_EOS_152","EOS_20","EOS_62","EOS_142","EOS_152","5_EOS_84_1","5_EOS_84_7","5_EOS_84_5","6_EOS","6_EOS_1",
 "6_EOS_2","6_EOS_3","6_EOS_4","6_EOS_5","6_EOS_6","6_EOS_7","6_EOS_8","6_EOS_9","6_EOS_10"]
-,[1,1,100],[1,1,100],[1,2,100],[1,7], [1,1],[1,2,30],[2,0,175,OPFOR,TRUE,FALSE]] call EOS_Spawn;
+,[1,1,100],[1,1,100],[1,2,100],[1,7], [1,1],[1,2,30],[2,0,175,opfor,TRUE,FALSE]] call EOS_Spawn;
 

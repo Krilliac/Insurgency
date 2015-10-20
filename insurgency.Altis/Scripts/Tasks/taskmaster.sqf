@@ -1,4 +1,4 @@
-DEBUG = false;
+DEBUG = true;
 
   SHK_Taskmaster_initDone = false;
   SHK_Taskmaster_add = {

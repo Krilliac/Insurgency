@@ -1,3 +1,5 @@
+// by BonInf*
+// changed by Psycho
 #define __includedMates (units group _playerdown - [_playerdown])
 private ["_playerdown","_closestsquadmate","_min_distance","_distance","_callout"];
 _playerdown = _this select 0;
@@ -29,6 +31,11 @@ if (isNil "_closestsquadmate") then {
 };
 
 if (isNull _closestsquadmate || {_closestsquadmate == _playerdown}) exitWith {[_playerdown] spawn tcb_fnc_sendaihealer};
+
+/*
+Hint format ["healer %1 is running",_closestsquadmate];
+diag_log format ["healer %1 is running",_closestsquadmate];
+*/
 
 While {alive _playerdown && {_playerdown getVariable "tcb_ais_agony"} && {_closestsquadmate distance _playerdown > 4} && {alive _closestsquadmate} && {!(_closestsquadmate getVariable "tcb_ais_agony")}} do {
 	_delay = time + 10;

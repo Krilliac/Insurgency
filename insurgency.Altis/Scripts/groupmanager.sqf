@@ -47,7 +47,7 @@ waitUntil{!isNull findDisplay 46};
 
 #define PREFIX aero
 #define COMPONENT gm
-//#define DEBUG_MODE
+#define DEBUG_MODE
 
 
 #define DOUBLES(A,B) ##A##_##B

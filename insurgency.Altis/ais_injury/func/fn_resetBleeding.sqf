@@ -1,3 +1,4 @@
+// by psycho
 private ["_unit"];
 _unit = _this select 0;
 
@@ -12,5 +13,6 @@ if (count tcb_ais_areBleeding > 0) then {
 	} forEach tcb_ais_areBleeding;
 };
 tcb_ais_areBleeding = tcb_ais_areBleeding - [-1];
+//publicVariable "tcb_ais_areBleeding";
 
 true

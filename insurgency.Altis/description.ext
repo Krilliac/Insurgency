@@ -5,17 +5,32 @@ OnLoadName = "5th marines Insurgency Altis";
 onLoadMission = "";
 OnLoadMissionTime = false;
 
-DisabledAI		= 1;
+//DisabledAI		= 1;
 showGPS			= 1;			
 showCompass		= 1;			
 showWatch		= 1;		
-joinUnassigned		= 1;		
-enableDebugConsole	= 1;	 
-allowFunctionsLog = 0;	
+//joinUnassigned		= 1;		
+//enableDebugConsole	= 1;	 
+//allowFunctionsLog = 0;	
 
-Respawn = 3;
-RespawnDelay = 5;
-RespawnDialog = 0;
+respawn = 3;
+respawndelay = 10;
+disabledAI=0;
+joinUnassigned = 0;
+enableDebugConsole = 1;
+allowFunctionsLog = 1;
+
+
+//--------------------------------------------------------------
+//------------------------AIS INJURY----------------------------
+//--------------------------------------------------------------
+class RscTitles {
+	#include "ais_injury\dialogs\rscTitlesAIS.hpp"
+};
+class CfgFunctions {
+	#include "ais_injury\cfgFunctionsAIS.hpp"
+};
+//----------------------------------------------
 
 #include "Scripts\taw_vd\dialog.hpp"
 
@@ -25,18 +40,9 @@ minPlayers = 1;
 maxPlayers = 40;
 };
 
-class RscTitles {
-#include "ais_injury\dialogs\rscTitlesAIS.hpp"
-};
-
-class CfgFunctions {
-#include "ais_injury\cfgFunctionsAIS.hpp"
-#include "Scripts\taw_vd\CfgFunctions.hpp"
-};
-
 class Params {
 	class Parameters {
-	title = "464";
+	title = "Altis Insurgency";
 	values[]={0,0};
 	texts[]={ "",""};
 	default = 0;			
@@ -60,7 +66,7 @@ class Params {
 	title = "		Pilot Check";
 	values[] = {1,0};
 	texts[] = {"Enabled","Disabled"};
-	default = 1;
+	default = 0;
 		};
 			
 	class PlayerMarkers {

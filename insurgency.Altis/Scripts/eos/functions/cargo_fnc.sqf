@@ -5,7 +5,7 @@ private ["_cargoPool","_emptySeats","_vehicle","_debug","_grp","_grpSize"];
 	_grp=(_this select 2);
 	_faction=(_this select 3);
 	_cargoType=(_this select 4);
-	_debug=false;
+	_debug=true;
 
 	_cargoPool=[_faction,_cargoType] call eos_fnc_getunitpool;
 		_side=side (leader _grp);

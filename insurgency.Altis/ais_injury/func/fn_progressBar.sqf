@@ -1,3 +1,4 @@
+// by EightSix
 #define MPSF_PROGBAR_BG (uiNamespace getVariable "mpsf_ProgressBar_gui_bg")
 #define MPSF_PROGBAR_FG (uiNamespace getVariable "mpsf_ProgressBar_gui_fg")
 #define MPSF_PROGBAR_TXT (uiNamespace getVariable "mpsf_ProgressBar_gui_txt")
