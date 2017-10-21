@@ -1,4 +1,5 @@
-if (!isServer) exitWith {};       
+if (!isServer) exitWith {};
+if(!isServer && !hasInterface) then{       
 
 #define PUSH(A,B) A set [count (A),B];
 #define REM(A,B) A=A-[B];
@@ -126,4 +127,5 @@ while{true} do {
 	REM(_objectsToCleanup,0)
 	REM(_timesWhenToCleanup,0)
 				
+	};
 };

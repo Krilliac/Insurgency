@@ -1,3 +1,4 @@
+if (isServer) then {
 true spawn {
 
     _pilots = ["B_Helipilot_F","B_Soldier_TL_F"];
@@ -27,10 +28,10 @@ true spawn {
 					if(player in _forbidden) then {
 						systemChat "You must be a pilot to operate this aircraft";
 						player action ["getOut", _veh];
+						};
 					};
 				};
-            		};
+			};
 		};
-    	};
+	};
 }; 
-

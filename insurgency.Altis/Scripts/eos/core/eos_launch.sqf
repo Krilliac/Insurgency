@@ -1,4 +1,3 @@
-if (isServer) then {
 private ["_HPpatrols","_HPgroupProbability","_CHgroupArray","_LVgroupArray","_HPgroupArray","_PAgroupArray","_CHgroupSize","_CHGroups","_SVehGroups","_AVgroupSize","_AVehGroups","_LVehGroups","_LVgroupSize","_PAgroupSize","_PApatrols","_HPpatrols","_HPgroupSize"];
 
 _JIPmkr=(_this select 0);
@@ -75,10 +74,10 @@ if (_CHgroupProbability > floor random 100) then {
 }else{_CHGroups=0;_CHgroupArray=[0,0]};
 
 {
-	_eosMarkers=server getvariable "EOSmarkers";
+	_eosMarkers = profileNamespace GetVariable "EOSmarkers";
 	if (isnil "_eosMarkers") then {_eosMarkers=[];};
 		_eosMarkers set [count _eosMarkers,_x];
-		server setvariable ["EOSmarkers",_eosMarkers,true];
+		profileNamespace setVariable ["EOSmarkers",_eosMarkers];
+		saveprofileNamespace;
 		null = [_x,[_HPpatrols,_HPgroupArray],[_PApatrols,_PAgroupArray],[_LVehGroups,_LVgroupArray],[_AVehGroups,_SVehGroups,_CHGroups,_CHgroupArray],_settings] execVM "Scripts\eos\core\EOS_Core.sqf";
 }foreach _JIPmkr;
-};

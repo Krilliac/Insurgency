@@ -1,2 +1,2 @@
-# 5th-MAP
-5th Marines Altis Insurgency map code!
+# Altis Insurgency
+Altis Insurgency using the Enemy Occupation System

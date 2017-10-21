@@ -1,48 +1,8 @@
 if (!isServer && isNull player) then {isJIP=true;} else {isJIP=false;};
 if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
 
-enableSentences false;
-
-["%1 --- Executing TcB AIS init.sqf",diag_ticktime] call BIS_fnc_logFormat;
-enableSaving [false,false];
-enableTeamswitch false;
-
-// TcB AIS Wounding System --------------------------------------------------------------------------
-if (!isDedicated) then {
-	TCB_AIS_PATH = "ais_injury\";
-	{[_x] call compile preprocessFile (TCB_AIS_PATH+"init_ais.sqf")} forEach (if (isMultiplayer) then {playableUnits} else {switchableUnits});		// execute for every playable unit
-	
-	//{[_x] call compile preprocessFile (TCB_AIS_PATH+"init_ais.sqf")} forEach (units group player);													// only own group - you cant help strange group members
-	
-	//{[_x] call compile preprocessFile (TCB_AIS_PATH+"init_ais.sqf")} forEach [p1,p2,p3,p4,p5];														// only some defined units
-};
-// --
-
-getLoadout = compile preprocessFileLineNumbers 'get_loadout.sqf';
-setLoadout = compile preprocessFileLineNumbers 'set_loadout.sqf';
-                                             
-[] spawn {
-    while{true} do {
-        if(alive player) then {
-            respawnLoadout = [player] call getLoadout;
-        };
-    sleep 2;  
-    };
-};
-
-player addEventHandler ["Respawn", {
-        [player, respawnLoadout] spawn setLoadout;
-    }
-];  
-
-null = [] execVM "Scripts\brief.sqf";
-null = [] execVM "Scripts\safezone.sqf";
-null = [] execVM "Scripts\eos\OpenMe.sqf";
-null = [] execVM "Scripts\groupmanager.sqf";
-null = [] execVM "Scripts\Tasks\complete.sqf";
-
-[120,120,120,120,600,120] execVM 'Scripts\cleanup.sqf';
-
+//Make sure the HC1 Entity exists in a way.
+if(isNil "HC1") exitWith {hint "The Headless Client is not connected, EOS will not function.";};
 
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 	call compile format
@@ -93,13 +53,18 @@ switch (PARAMS_Weather) do
 	};
 };
 
-if (PARAMS_PilotCheck == 1) then { null = [] execVM "Scripts\pilotcheck.sqf"; };
-if (PARAMS_PlayerMarkers == 1) then { null = [] execVM "Scripts\playermarker.sqf"; };	
+if (isServer) then { systemchat "Insurgency Version 1.1"};
+if (isServer) then { systemchat "----CHANGELOG----"};
+if (isServer) then { systemchat "Added more objects to Base"};
+if (isServer) then { systemchat "Fixed AAF being spawned as OPFOR"};
+if (isServer) then { systemchat "Music now plays when you enter the server"};
+if (isServer) then { systemchat "Epic Color Corrections and this changelog ;)"};
 
-// vehicle HUD
-_null = [] execVM 'scripts\groupmanager.sqf';									// group manager 
-
-null = [] execVM "playermarker.sqf";
-_null = [] execVM "scripts\restrictions.sqf";
-
-[] execVM "anticheat.sqf"; 
+{
+   private ["_group", "_leader", "_data"];
+   _group  = group player;
+   _leader = leader _group;
+   _data   = [nil, "Blufor Delta", false]; // [<Insignia>, <Group Name>, <Private>]
+ 
+   ["RegisterGroup", [_group, _leader, _data]] call BIS_fnc_dynamicGroups;
+};

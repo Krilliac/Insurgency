@@ -1,3 +1,4 @@
+if(!isServer && !hasInterface) then{
 _position=(_this select 0);
 _side=(_this select 1);
 _faction=(_this select 2);
@@ -33,3 +34,4 @@ _vehCrew=[];
 _return=[_vehicle,_vehCrew,_grp];
 
 _return
+};

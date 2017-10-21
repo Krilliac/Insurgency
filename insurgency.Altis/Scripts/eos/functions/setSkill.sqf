@@ -1,3 +1,5 @@
+if(!isServer && !hasInterface) then{
+
 _grp=(_this select 0);
 _skillArray=(_this select 1);					
 					
@@ -12,4 +14,5 @@ _unit setSkill [_x,_skillvalue];
 if (EOS_DAMAGE_MULTIPLIER != 1) then {_unit removeAllEventHandlers "HandleDamage";_unit addEventHandler ["HandleDamage",{_damage = (_this select 2)*EOS_DAMAGE_MULTIPLIER;_damage}];};
 if (EOS_KILLCOUNTER) then {_unit addEventHandler ["killed", "null=[] execVM ""Scripts\eos\functions\EOS_KillCounter.sqf"""]};
 	
-	} forEach (units _grp); 
+	} forEach (units _grp);
+};	

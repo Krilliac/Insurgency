@@ -1,4 +1,5 @@
 if (!isServer) exitWith {};
+if(!isServer && !hasInterface) then{
 private ["_cargoPool","_emptySeats","_vehicle","_debug","_grp","_grpSize"];
 	_vehicle=(_this select 0);
 	_grpSize=(_this select 1);
@@ -32,3 +33,4 @@ private ["_cargoPool","_emptySeats","_vehicle","_debug","_grp","_grpSize"];
 								
 	{_x moveincargo _vehicle}foreach units _grp;
 	};						
+};

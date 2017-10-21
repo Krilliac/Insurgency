@@ -1,3 +1,4 @@
+if (isServer) then {
 [] spawn { 
   private ["_marker", "_unitNumber"];  
   while {true} do {
@@ -51,5 +52,6 @@
       
     sleep 0.5;
 
-  }; 
+		}; 
+	};
 };  

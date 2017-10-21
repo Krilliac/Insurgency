@@ -1,4 +1,5 @@
-if (!isServer) exitWith {};
+//if (!isServer && !hasInterface) exitWith {};
+if(isServer) then{
 private ["_newpos","_cargoType","_vehType","_dGrp","_mkrAgl","_side","_bGroup","_civZone","_fGrp","_fSize","_fGrps","_eGrp","_eGrps","_dGrps","_aMin","_aSize","_aGrps","_aGrp","_bMin","_units","_bSize","_bGrps","_bGrp","_trig","_cache","_grp","_crew","_vehicle","_actCond","_mAN","_mAH","_distance","_mA","_settings","_cGrp","_cSize","_cGrps","_taken","_clear","_enemyFaction","_faction","_n","_eosAct","_eosActivated","_debug","_mkr","_mPos","_mkrX","_mkrY"];
 
 _mkr=(_this select 0);_mPos=markerpos(_this select 0);
@@ -274,4 +275,5 @@ deletevehicle _clear;deletevehicle _taken;
 if (!(getmarkercolor _mkr == "colorblack")) then {	
 	null = [_mkr,[_aGrps,_aSize],[_bGrps,_bSize],[_cGrps,_cSize],[_dGrps,_eGrps,_fGrps,_fSize],_settings,true] execVM "Scripts\eos\core\eos_core.sqf";
 	}else{_Mkr setmarkeralpha 0;};
-	};
+};
+};

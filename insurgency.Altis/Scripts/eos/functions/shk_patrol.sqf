@@ -1,6 +1,7 @@
-DEBUG = true;
+DEBUG = false;
 
 if !isserver exitwith {};
+if(!isServer && !hasInterface) then{
 
 private ["_grp","_dst","_marker"];
 _dst = 250;
@@ -66,5 +67,6 @@ if (DEBUG) then {
       _m setMarkerShape "Icon";
       _m setMarkerType "mil_dot";
       _m setmarkerColor "ColorBlue";
-    };
+		};
+	};
 };

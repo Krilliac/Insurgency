@@ -1,3 +1,4 @@
+if(!isServer && !hasInterface) then{
 private "_getpos";
 _getpos = {
   private ["_origo","_dir","_dist"];
@@ -119,4 +120,5 @@ if (typename (_this select 0) == typename "") then {
     };
   };
   _pos
+};
 };

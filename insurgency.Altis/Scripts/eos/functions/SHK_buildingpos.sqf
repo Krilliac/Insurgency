@@ -1,5 +1,5 @@
+if(!isServer && !hasInterface) then{
 private "_men";
-if isserver then {
 
   private "_sortArray";
   _sortArray = {
@@ -123,7 +123,7 @@ if (count _this > 7) then {
     };
     SHK_BuildingPos_init = true;
   };
-  if isserver then {
+  if(!isServer && !hasInterface) then{
     private ["_hide","_portition","_condition","_hidden","_u","_i"];
     _hide = _this select 7;
     _portition = _hide select 0;
@@ -138,11 +138,11 @@ if (count _this > 7) then {
 
     SHK_BuildingPos_EH = [true,_hidden];
     publicvariable "SHK_BuildingPos_EH";
-    if !isdedicated then { [true,_hidden] call SHK_BuildingPos_fnc };
+    if(!isServer && !hasInterface) then{ [true,_hidden] call SHK_BuildingPos_fnc };
     
     waituntil {(call compile _condition)};
     SHK_BuildingPos_EH = [false,_hidden];
     publicvariable "SHK_BuildingPos_EH";
-    if !isdedicated then { [false,_hidden] call SHK_BuildingPos_fnc };
+    if(!isServer && !hasInterface) then{ [false,_hidden] call SHK_BuildingPos_fnc };
   };
 };

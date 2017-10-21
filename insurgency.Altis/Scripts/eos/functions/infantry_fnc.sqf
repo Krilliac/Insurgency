@@ -1,5 +1,5 @@
 if (!isServer) exitWith {};
-
+if(!isServer && !hasInterface) then{
 private ["_grp","_unit","_pool","_pos","_faction"];
 
 _pos=(_this select 0);
@@ -24,3 +24,4 @@ for "_x" from 1 to _grpSize do {
 
 
 _grp
+};

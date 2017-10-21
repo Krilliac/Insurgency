@@ -1,9 +1,11 @@
+if(!isServer && !hasInterface) then{
+
 private ["_pad","_getToMarker","_cargoGrp","_vehicle"];
 _mkr=(_this select 0);
 _veh=(_this select 1);
 _counter=(_this select 2);
 
-_debug=true;
+_debug=false;
 					_vehicle = _veh select 0;
 					_grp = _veh select 2;					
 					_cargoGrp= _veh select 3;
@@ -33,3 +35,4 @@ _wp2 setWaypointType "MOVE";
 _wp2 setWaypointStatements ["true", "{deleteVehicle _x} forEach crew (vehicle this) + [vehicle this];"];  
 
 deletevehicle _pad;
+};

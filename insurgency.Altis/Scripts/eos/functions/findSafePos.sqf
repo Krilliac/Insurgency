@@ -1,3 +1,4 @@
+if(!isServer && !hasInterface) then{
 _mrk=(_this select 0);
 _radveh	=(_this select 1);
 
@@ -11,3 +12,4 @@ _radveh	=(_this select 1);
 								};
 				};
 _newpos
+};
