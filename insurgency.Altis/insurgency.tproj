@@ -105,12 +105,12 @@
           <ProjectNodeViewModel xsi:type="ProjectFolderNodeViewModel" Name="Tasks" IsExpanded="true" FileName="Scripts\Tasks">
             <IsSelected>false</IsSelected>
             <SubNodes>
-              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="complete.sqf" IsExpanded="false" FileName="Scripts\Tasks\complete.sqf">
+              <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="complete.sqf" IsExpanded="true" FileName="Scripts\Tasks\complete.sqf">
                 <IsSelected>false</IsSelected>
                 <SubNodes />
               </ProjectNodeViewModel>
               <ProjectNodeViewModel xsi:type="ProjectFileNodeViewModel" Name="taskmaster.sqf" IsExpanded="false" FileName="Scripts\Tasks\taskmaster.sqf">
-                <IsSelected>false</IsSelected>
+                <IsSelected>true</IsSelected>
                 <SubNodes />
               </ProjectNodeViewModel>
             </SubNodes>
