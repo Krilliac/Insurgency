@@ -35,8 +35,6 @@ class Params {
 		};
 };
 
-#include "infiSTAR_AdminMenu.hpp"
-
 #include "VVS\menu.h"
 
 class CfgFunctions 
