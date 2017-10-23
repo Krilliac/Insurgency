@@ -1,5 +1,4 @@
-if (!isServer && !hasInterface) exitWith {};
-if (isServer) then { // Has to be ran on Server otherwise EOS won't initialize
+//if (!isServer && !hasInterface) exitWith {};
 private ["_newpos","_cargoType","_vehType","_dGrp","_mkrAgl","_side","_bGroup","_civZone","_fGrp","_fSize","_fGrps","_eGrp","_eGrps","_dGrps","_aMin","_aSize","_aGrps","_aGrp","_bMin","_units","_bSize","_bGrps","_bGrp","_trig","_cache","_grp","_crew","_vehicle","_actCond","_mAN","_mAH","_distance","_mA","_settings","_cGrp","_cSize","_cGrps","_taken","_clear","_enemyFaction","_faction","_n","_eosAct","_eosActivated","_debug","_mkr","_mPos","_mkrX","_mkrY"];
 
 _mkr=(_this select 0);_mPos=markerpos(_this select 0);
@@ -28,7 +27,7 @@ _cache= if (count _this > 6) then {_this select 6} else {false};
 _trig=format ["EOSTrigger%1",_mkr];
 
 if (!_cache) then {
-	if (!isServer && !hasInterface) then {
+	if (isMultiplayer) then {
 			if (_heightLimit) then 
 			{_actCond="{vehicle _x in thisList && isplayer _x && ((getPosATL _x) select 2) < 50} count playableunits > 0";
 							}else 
@@ -55,8 +54,7 @@ if (!_cache) then {
 							{
 						_mkr setmarkercolor hostileColor;
 							};
-							
-if (!isServer && !hasInterface) then {							
+														
 waituntil {triggeractivated _eosActivated};	
 if (!(getmarkercolor _mkr == "colorblack"))then {
 	if (!(getmarkercolor _mkr == VictoryColor)) then {_mkr setmarkerAlpha _mAH;};
@@ -81,11 +79,10 @@ if (!(getmarkercolor _mkr == "colorblack"))then {
 												0=[_aGroup,"INFskill"] call eos_fnc_grouphandlers;
 if (_debug) then {PLAYER SIDECHAT (format ["Spawned House Patrol: %1",_counter]);0= [_mkr,_counter,"House Patrol",getpos (leader _aGroup)] call EOS_debug};
 												};
-		};
 	};
 };
 
-if (!isServer && !hasInterface) then {
+if (isServer) then {
 	for "_counter" from 1 to _bGrps do {
 	if (isnil "_bGrp") then {_bGrp=[];};
 		if (_cache) then {
@@ -107,7 +104,7 @@ if (_debug) then {PLAYER SIDECHAT (format ["Spawned Patrol: %1",_counter]);0= [_
 		};
 };		
 	
-	if (!isServer && !hasInterface) then {
+	if (isServer) then {
 	for "_counter" from 1 to _cGrps do {	
 	if (isnil "_cGrp") then {_cGrp=[];};	
 	
@@ -127,7 +124,7 @@ if (_debug) then {player sidechat format ["Light Vehicle:%1 - r%2",_counter,_cGr
 		};
 };		
 
-	if (!isServer && !hasInterface) then {	
+	if (isServer) then {	
 	for "_counter" from 1 to _dGrps do {
 	if (isnil "_dGrp") then {_dGrp=[];};
 	
@@ -144,7 +141,7 @@ if (_debug) then {player sidechat format ["Armoured:%1 - r%2",_counter,_dGrps];0
 		};
 	};
 	
-	if (!isServer && !hasInterface) then {
+	if (isServer) then {
 	for "_counter" from 1 to _eGrps do {
 		if (surfaceiswater _mPos) exitwith {};
 		if (isnil "_eGrp") then {_eGrp=[];};
@@ -160,7 +157,7 @@ if (_debug) then {player sidechat format ["Static:%1",_counter];0= [_mkr,_counte
 		};
 };		
 	
-	if (!isServer && !hasInterface) then {	
+	if (isServer) then {	
 	for "_counter" from 1 to _fGrps do {
 	if (isnil "_fGrp") then {_fGrp=[];};	
 		if ((_fSize select 0) > 0) then {_vehType=4}else{_vehType=3};
@@ -186,7 +183,7 @@ if (_debug) then {player sidechat format ["Chopper:%1",_counter];0= [_mkr,_count
 			};
 };			
 
-	if (!isServer && !hasInterface) then {
+	if (isServer) then {
 			_clear = createTrigger ["EmptyDetector",_mPos]; 
 			_clear setTriggerArea [_mkrX,_mkrY,_mkrAgl,FALSE]; 
 			_clear setTriggerActivation [_enemyFaction,"NOT PRESENT",true]; 
@@ -285,8 +282,9 @@ if (_debug) then {hint "Zone Cached";};
 _eosAct=false;		
 			};sleep 0.5;};
 
-deletevehicle _clear;deletevehicle _taken;	
+deletevehicle _clear;deletevehicle _taken;
 	
+if (isServer) then {	
 if (!(getmarkercolor _mkr == "colorblack")) then {	
 	null = [_mkr,[_aGrps,_aSize],[_bGrps,_bSize],[_cGrps,_cSize],[_dGrps,_eGrps,_fGrps,_fSize],_settings,true] execVM "Scripts\eos\core\eos_core.sqf";
 	}else{_Mkr setmarkeralpha 0;};

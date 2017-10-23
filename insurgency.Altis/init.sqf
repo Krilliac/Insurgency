@@ -2,7 +2,7 @@ if (!isServer && isNull player) then {isJIP=true;} else {isJIP=false;};
 if (!isDedicated) then {waitUntil {!isNull player && isPlayer player};};
 
 //Make sure the HC1 Entity exists in a way.
-if(isNil "HC1") exitWith {hint "The Headless Client is not connected, EOS will not function.";};
+if(isNil "HC1") exitWith {hint "The Headless Client is not connected.";};
 
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 	call compile format
@@ -53,12 +53,12 @@ switch (PARAMS_Weather) do
 	};
 };
 
-if (isServer) then { systemchat "Insurgency Version 1.1"};
-if (isServer) then { systemchat "----CHANGELOG----"};
-if (isServer) then { systemchat "Added more objects to Base"};
-if (isServer) then { systemchat "Fixed AAF being spawned as OPFOR"};
-if (isServer) then { systemchat "Music now plays when you enter the server"};
-if (isServer) then { systemchat "Epic Color Corrections and this changelog ;)"};
+if (hasInterface) then { systemchat "Insurgency Version 1.1"};
+if (hasInterface) then { systemchat "----CHANGELOG----"};
+if (hasInterface) then { systemchat "Added more objects to Base"};
+if (hasInterface) then { systemchat "Fixed AAF being spawned as OPFOR"};
+if (hasInterface) then { systemchat "Music now plays when you enter the server"};
+if (hasInterface) then { systemchat "Epic Color Corrections and this changelog ;)"};
 
 {
    private ["_group", "_leader", "_data"];

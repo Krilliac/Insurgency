@@ -1,4 +1,4 @@
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 
 private ["_pad","_getToMarker","_cargoGrp","_vehicle"];
 _mkr=(_this select 0);

@@ -1,5 +1,5 @@
 if (!isServer) exitwith {};
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 sleep 1;
 _eosMarkers = profileNamespace GetVariable "EOSmarkers";
 {

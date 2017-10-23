@@ -1,5 +1,5 @@
 if (!isServer) exitWith {};
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 private ["_cargoPool","_emptySeats","_vehicle","_debug","_grp","_grpSize"];
 	_vehicle=(_this select 0);
 	_grpSize=(_this select 1);

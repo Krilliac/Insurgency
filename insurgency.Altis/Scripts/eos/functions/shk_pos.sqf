@@ -1,4 +1,4 @@
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 private "_getpos";
 _getpos = {
   private ["_origo","_dir","_dist"];

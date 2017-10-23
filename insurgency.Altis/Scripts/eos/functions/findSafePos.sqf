@@ -1,4 +1,4 @@
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 _mrk=(_this select 0);
 _radveh	=(_this select 1);
 

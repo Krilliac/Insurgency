@@ -1,4 +1,4 @@
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 _eosMarkers = profileNamespace GetVariable "EOSmarkers";
 
 {_x setMarkerAlpha (MarkerAlpha _x);

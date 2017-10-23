@@ -1,4 +1,4 @@
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 
 _grp=(_this select 0);
 _skillArray=(_this select 1);					

@@ -3,7 +3,7 @@ DEBUG = true;
   SHK_Taskmaster_initDone = false;
   SHK_Taskmaster_add = {
 
-    if(!isServer && !hasInterface) then{
+    if(isServer) then{
       private ["_name","_short","_long","_cond","_marker","_state","_dest"];
       _name = _this select 0;
       _short = _this select 1;
@@ -136,7 +136,7 @@ DEBUG = true;
   };
   SHK_Taskmaster_assign = {
 
-    if(!isServer && !hasInterface) then{
+    if(isServer) then{
       private "_task";
       for "_i" from 0 to (count SHK_Taskmaster_Tasks - 1) do {
         if (_this == ((SHK_Taskmaster_Tasks select _i) select 0)) then {
@@ -395,7 +395,7 @@ DEBUG = true;
     };
   };
 
-if(!isServer && !hasInterface) then{
+if(isServer) then{
   SHK_Taskmaster_Tasks = []; 
 
   if (!isnil "_this") then {

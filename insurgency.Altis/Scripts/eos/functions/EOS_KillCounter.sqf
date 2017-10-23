@@ -1,4 +1,4 @@
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 private ["_eosKills"];
 _eosKills=server getvariable "EOSkillCounter";
 

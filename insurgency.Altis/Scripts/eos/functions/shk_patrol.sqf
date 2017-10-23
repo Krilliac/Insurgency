@@ -1,7 +1,7 @@
 DEBUG = false;
 
 if !isserver exitwith {};
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 
 private ["_grp","_dst","_marker"];
 _dst = 250;

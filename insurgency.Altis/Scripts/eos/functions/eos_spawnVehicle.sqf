@@ -1,10 +1,11 @@
-if(!isServer && !hasInterface) then{
+if(isServer) then{
 _position=(_this select 0);
 _side=(_this select 1);
 _faction=(_this select 2);
 _type=(_this select 3);
 _special = if (count _this > 4) then {_this select 4} else {"CAN_COLLIDE"};
 
+if(hasInterface && !isDedicated) then{
 _vehicleType=[_faction,_type] call eos_fnc_getunitpool;
 	_grp = createGroup _side;
 
@@ -34,4 +35,5 @@ _vehCrew=[];
 _return=[_vehicle,_vehCrew,_grp];
 
 _return
+	};
 };
